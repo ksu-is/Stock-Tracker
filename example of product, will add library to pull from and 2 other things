@@ -1,0 +1,14 @@
+import yfinance as yf
+
+ticker = "AAPL"
+
+if ticker == "AAPL":
+    stock = yf.Ticker(ticker)
+    info = stock.info
+
+    print("Company:", info["longName"])
+    print("Market Cap:", info["marketCap"])
+    print("PE Ratio:", info["trailingPE"])
+    print("52 Week High:", info["fiftyTwoWeekHigh"])
+    print("52 Week Low:", info["fiftyTwoWeekLow"])
+    print("Dividend Yield:", info["dividendYield"])
