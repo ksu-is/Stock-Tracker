@@ -1,0 +1,14 @@
+import yfinance as yf
+
+ticker = input("Enter a stock that is int he S&P500, only include the ticker").upper()
+
+stock = yf.Ticker(ticker)
+info = stock.info
+
+market_cap = info.get("MarketCap")
+name = info.get("longName", ticker)
+
+if market_cap:
+    print(f"{name} ({ticker}) market cap: ${market_cap:,}")
+else:
+    print("Could not find market cap for that ticker.")
