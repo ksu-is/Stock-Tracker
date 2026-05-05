@@ -12,3 +12,6 @@ if ticker == "AAPL":
     print("52 Week High:", info["fiftyTwoWeekHigh"])
     print("52 Week Low:", info["fiftyTwoWeekLow"])
     print("Dividend Yield:", info["dividendYield"])
+
+
+1
