@@ -1,0 +1,19 @@
+# EPS - its the profit the company made per share of stock.
+eps = net_income / shares
+
+# P/E ratio - how much investors pay for every dollar of earnings.
+pe = price / eps
+
+
+  # profit margin (%) - what percentage of the revenue becomes profit
+profit_margin = (net_income / revenue) * 100
+
+# D/E ratio - how much debt the company has vs. its own money
+debt_to_equity = total_debt / equity
+
+
+  # current ratio - can the company pay its bills(short-term/current liabilities)
+current_ratio = current_assets / current_liabilities
+
+# ROE (%) how efficient the company is able to turn the equity into profit.
+roe = (net_income / equity) * 100
