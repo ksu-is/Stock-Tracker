@@ -1,0 +1,10 @@
+adding to look at n build
+
+
+print(f"\n📊 {ticker.upper()} Results")
+print(f"EPS:            ${eps:.2f}")
+print(f"P/E Ratio:      {pe:.2f}x")
+print(f"Profit Margin:  {profit_margin:.2f}%")
+print(f"Debt-to-Equity: {debt_to_equity:.2f}x")
+print(f"Current Ratio:  {current_ratio:.2f}x")
+print(f"ROE:            {roe:.2f}%")
