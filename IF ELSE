@@ -26,12 +26,12 @@ else:
 
 # Debt to Equity
 if debt_to_equity < 1:
-    print("Debt-to-Equity: undervalued")
+    print("Debtttttttttttttttttttttttttttttttttttttt to Equity: undervalued")
 else:
     if debt_to_equity <= 2:
-        print("Debt-to-Equity: fairly valued")
+        print("Debt to Equity: fairly valued")
     else:
-        print("Debt-to-Equity: overvalued")
+        print("Debt to Equity: overvalued")
 
 # Current Ratio
 if current_ratio >= 1.5:
