@@ -1,0 +1,52 @@
+# grading system
+
+# EPS
+if eps > 0:
+    print("EPS: undervalued - company is profitable")
+else:
+    print("EPS: overvalued - company is losing money")
+
+# P/E
+if pe < 15:
+    print("P/E: undervalued")
+else:
+    if pe <= 25:
+        print("P/E: fairly valued")
+    else:
+        print("P/E: overvalued")
+
+# Profit Margin
+if profit_margin >= 20:
+    print("Profit Margin: undervalued")
+else:
+    if profit_margin >= 10:
+        print("Profit Margin: fairly valued")
+    else:
+        print("Profit Margin: overvalued")
+
+# Debt to Equity
+if debt_to_equity < 1:
+    print("Debt-to-Equity: undervalued")
+else:
+    if debt_to_equity <= 2:
+        print("Debt-to-Equity: fairly valued")
+    else:
+        print("Debt-to-Equity: overvalued")
+
+# Current Ratio
+if current_ratio >= 1.5:
+    print("Current Ratio: undervalued")
+else:
+    if current_ratio >= 1:
+        print("Current Ratio: fairly valued")
+    else:
+        print("Current Ratio: overvalued")
+
+# ROE
+if roe >= 15:
+    print("ROE: undervalued")
+else:
+    if roe >= 8:
+        print("ROE: fairly valued")
+    else:
+        print("ROE: overvalued")
