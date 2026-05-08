@@ -1,0 +1,117 @@
+import yfinance as yf
+
+while True:
+    ticker = input("Enter a stock ticker or Q to quit: ")
+    if ticker.upper() == "Q":
+        break
+
+    stock = yf.Ticker(ticker)
+    info = stock.info
+    income = stock.income_stmt
+    balance = stock.balance_sheet
+
+    # explaining this part, because I'm using pandas library
+    # pulling the numbers from the financial statements using .loc because it grabs the data easier
+    # .loc grabs the row, .iloc[0] grabs the most recent year (pandas)
+
+    net_income = income.loc["Net Income"].iloc[0]
+    revenue = income.loc["Total Revenue"].iloc[0]
+    shares = info["sharesOutstanding"]
+    price = info["currentPrice"]
+    current_assets = balance.loc["Current Assets"].iloc[0]
+    current_liabilities = balance.loc["Current Liabilities"].iloc[0]
+    total_debt = balance.loc["Total Debt"].iloc[0]
+    equity = balance.loc["Stockholders Equity"].iloc[0]
+
+    # calculations
+
+    # EPS - profit per share
+    eps = net_income / shares
+
+    # P/E - how much investors pay per dollar of earnings
+    pe = price / eps
+
+    # profit margin - what % of revenue becomes profit
+    profit_margin = (net_income / revenue) * 100
+
+    # debt to equity - debt vs own money
+    debt_to_equity = total_debt / equity
+
+    # current ratio - can it pay short term bills
+    current_ratio = current_assets / current_liabilities
+
+    # ROE - how well it turns equity into profit
+    roe = (net_income / equity) * 100
+
+    market_cap = info["marketCap"]
+    print(f"\n {ticker.upper()} | Market Cap: ${market_cap:,.0f}")
+
+    print(f"\n {ticker.upper()} Reults")
+    print(f"EPS:            ${eps:.2f}")
+    print(f"P/E Ratio:      {pe:.2f}x")
+    print(f"Profit Margin:  {profit_margin:.2f}%")
+    print(f"Debt-to-Equity: {debt_to_equity:.2f}x")
+    print(f"Current Ratio:  {current_ratio:.2f}x")
+    print(f"ROE:            {roe:.2f}%")
+
+    # grading system
+
+    # EPS
+    if eps > 0:
+        print("EPS: undervalued - company is profitable")
+    else:
+        print("EPS: overvalued - company is losing money")
+
+    # P/E
+    if pe < 15:
+        print("P/E: undervalued")
+    else:
+        if pe <= 25:
+            print("P/E: fairly valued")
+        else:
+            print("P/E: overvalued")
+
+    # Profit Margin
+    if profit_margin >= 20:
+        print("Profit Margin: undervalued")
+    else:
+        if profit_margin >= 10:
+            print("Profit Margin: fairly valued")
+        else:
+            print("Profit Margin: overvalued")
+
+    # Debt to Equity
+    if debt_to_equity < 1:
+        print("Debttto Equity: undervalued")
+    else:
+        if debt_to_equity <= 2:
+            print("Debt to Equity: fairly valued")
+        else:
+            print("Debt to Equity: overvalued")
+
+    # Current Ratio
+    if current_ratio >= 1.5:
+        print("Current Ratio: undervalued")
+    else:
+        if current_ratio >= 1:
+            print("Current Ratio: fairly valued")
+        else:
+            print("Current Ratio: overvalued")
+
+    # ROE
+    if roe >= 15:
+        print("ROE: undervalued")
+    else:
+        if roe >= 8:
+            print("ROE: fairly valued")
+        else:
+            print("ROE: overvalued")
+
+
+
+
+
+
+
+
+
